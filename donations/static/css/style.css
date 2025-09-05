@@ -13,6 +13,7 @@ body {
     min-height: 100vh; /* full viewport height */
     background-color: #f9f9f9;
     color: #333;
+    font-size: 0.9rem; /* Slightly smaller base font size */
 }
 
 /* Header */
@@ -28,52 +29,54 @@ header {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 2%; /* Add slight padding */
 }
 
 .logo {
     display: flex;
     align-items: center;
-    margin-left: -150px; /* Move logo slightly left */
+    margin-left: 0; /* Remove excessive left margin */
+    padding-left: 1rem; /* Add slight padding to ensure visibility */
 }
 
 .logo img {
-    width: 70px;
-    height: 70px;
-    margin-right: 15px;
+    width: 8vw; /* Smaller logo width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .school-name {
-    font-size: 1.8rem;
+    font-size: 1.5vw; /* Smaller font size */
     font-weight: bold;
 }
 
 nav ul {
     display: flex;
-    margin-right: -300px; /* Move nav links slightly right */
+    justify-content: flex-end; /* Align nav items to the right */
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    margin-left: 3rem;
+    margin: 0 1rem; /* Add consistent spacing between nav items */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Ensure consistent font size */
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+    color: #ffcc00; /* Highlight on hover */
 }
 
 /* Hero Section */
 .hero {
     background-color: #3b1769;
     color: white;
-    padding: 3rem 0;
+    padding: 3vh 3%; /* Reduce padding */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -87,13 +90,13 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3vw; /* Smaller heading size */
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 1.2vw; /* Smaller paragraph size */
     margin-bottom: 1.5rem;
     opacity: 0.9;
 }
@@ -102,10 +105,10 @@ nav ul li a:hover {
 .hero .donate-btn {
     background-color: #1659d4;
     color: #ffffff;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1.2rem; /* Smaller button padding */
     border: none;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1vw; /* Smaller button text */
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s;
@@ -129,8 +132,8 @@ nav ul li a:hover {
 }
 
 .hero-image img {
-    width: 60%;
-    height: auto;
+    width: 90%; /* Slightly smaller image width */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
 }
 
@@ -138,13 +141,13 @@ nav ul li a:hover {
 .about {
     max-width: 1200px;
     margin: 4rem auto;
-    padding: 0 20px;
+    padding: 3vh 3%; /* Reduce padding */
     text-align: center;
 }
 
 .about h2 {
     color: #0026a5;
-    font-size: 2rem;
+    font-size: 2.5vw; /* Smaller heading size */
     margin-bottom: 1.5rem;
 }
 
@@ -229,6 +232,35 @@ footer {
         flex-direction: column;
         gap: 1rem;
         margin-top: 10px;
+    }
+}
+
+/* Responsive Navbar Fix */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
+    }
+
+    .logo {
+        margin-left: 0; /* Reset excessive left margin */
+        padding-left: 0.5rem; /* Adjust padding for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-right: 0; /* Reset excessive right margin */
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Add spacing between items */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; /* Slightly smaller font size for mobile */
     }
 }
 
@@ -354,6 +386,97 @@ footer {
     background-color: #FFC107;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Compact Responsive Adjustments */
+body {
+    font-size: 0.9rem; /* Slightly smaller base font size */
+}
+
+/* Header */
+.header-container {
+    padding: 0 3%; /* Reduce padding */
+}
+
+.logo img {
+    width: 8vw; /* Smaller logo width */
+    height: auto;
+}
+
+.school-name {
+    font-size: 1.5vw; /* Smaller font size */
+}
+
+nav ul li {
+    margin-left: 2rem; /* Reduce spacing between nav items */
+}
+
+/* Hero Section */
+.hero {
+    padding: 3vh 3%; /* Reduce padding */
+}
+
+.hero h1 {
+    font-size: 3vw; /* Smaller heading size */
+}
+
+.hero p {
+    font-size: 1.2vw; /* Smaller paragraph size */
+}
+
+.hero .donate-btn {
+    padding: 0.6rem 1.2rem; /* Smaller button padding */
+    font-size: 1vw; /* Smaller button text */
+}
+
+.hero-image img {
+    width: 90%; /* Slightly smaller image width */
+    height: auto;
+}
+
+/* About Section */
+.about {
+    padding: 3vh 3%; /* Reduce padding */
+}
+
+.about h2 {
+    font-size: 2.5vw; /* Smaller heading size */
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .school-name {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero .donate-btn {
+        font-size: 0.9rem;
+    }
 }
 
 /* Responsive Donation/OTP Form */
