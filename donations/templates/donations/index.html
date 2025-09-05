@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shepaigonj High School</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Shepaigonj High School Logo">
+                <div class="school-name">
+                    <div>SHEPAIGONJ</div>
+                    <div>HIGH SCHOOL</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="{% url 'donate' %}">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Honoring Our Beloved Principal</h1>
+            <p>Join us to celebrate the retirement of our dedicated principal and help us organize a memorable farewell event.</p>
+            <a href="{% url 'donate' %}" class="donate-btn">Donate Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/hero.jpg' %}" alt="Principal">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Our School</h2>
+        <p>Shepaigonj High School has been providing quality education for over 30 years. Our teachers are committed to nurturing young minds and shaping the future leaders of tomorrow.</p>
+    </section>
+
+    <!-- Teachers Section -->
+    <section class="teachers">
+        <div class="teacher">
+            <img src="https://via.placeholder.com/120x120?text=Teacher+1" alt="Teacher 1">
+        </div>
+        <div class="teacher">
+            <img src="https://via.placeholder.com/120x120?text=Teacher+2" alt="Teacher 2">
+        </div>
+        <div class="teacher">
+            <img src="https://via.placeholder.com/120x120?text=Teacher+3" alt="Teacher 3">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            school@gmail.com | Phone: +880 1234 567890
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Shepaigonj High School. All Rights Reserved.
+    </footer>
+</body>
+</html>

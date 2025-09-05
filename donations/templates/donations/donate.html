@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Shepaigonj High School</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Shepaigonj High School Logo">
+                <div class="school-name">
+                    <div>SHEPAIGONJ</div>
+                    <div>HIGH SCHOOL</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'donate' %}">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Donate Form Section -->
+    <section class="donate-section">
+        <h2>Please fill the form to donation</h2>
+
+        <form method="POST" action="{% url 'donate' %}">
+            {% csrf_token %}
+            <div class="donate-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+
+            <div class="donate-form">
+                <label for="batch">Batch Year</label>
+                <input type="Number" id="batch" name="batch" placeholder="Batch Number Like eg: 2020" required>
+            </div>
+
+            <div class="donate-form">
+                <label for="mobile_bank">Mobile Banking Method</label>
+                <select id="mobile_bank" name="mobile_bank" required>
+                    <option value="">--Select--</option>
+                    <option value="bkash">bKash</option>
+                    <option value="nagad">Nagad</option>
+                    <option value="rocket">Rocket</option>
+                </select>
+            </div>
+
+            <div class="donate-form">
+                <label for="amount">Donation Amount (BDT)</label>
+                <input type="Number" id="amount" name="amount" placeholder="Enter amount" min="1" step="0.01"required>
+            </div>
+
+            <div class="donate-form">
+                <label for="Contact">Your Mobile Banking Number</label>
+                <input type="Number" id="Contact" name="Contact" placeholder="01*********"></input>
+            </div>
+
+            <div class="donate-form">
+                <label for="txn_id">Transaction ID</label>
+                <input type="text" id="txn_id" name="txn_id" placeholder="Paste your Transaction ID"></input>
+            </div>
+
+            <div class="donate-form">
+                <button type="submit" class="donate-btn">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Shepaigonj High School. All Rights Reserved.
+    </footer>
+</body>
+</html>
