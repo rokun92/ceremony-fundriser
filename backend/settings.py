@@ -1,5 +1,5 @@
 
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-l3l@k06mbsqkf#n!*o$izda4a^548wztde5shhw*s2unut)dwe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ceremony-fundriser.railway.app']
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 
 # Application definition
